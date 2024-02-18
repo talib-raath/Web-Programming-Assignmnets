@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charsetUTF-8>
+ <meta name="port" content="widthdevice-width,-scale=10">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <title>Signup</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+.signup-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.signup-form h2 {
+    text-align: center;
+    color: #333;
+}
+
+.signup-form div {
+    margin-bottom: 15px;
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+/* Input and Select field styling */
+.signup-form input[type="text"],
+.signup-form input[type="date"],
+.signup-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* Space between each input/select */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Gender select box specific styling */
+.gender-select-box {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+/* Adjustments for inputs to look better side by side */
+.signup-form div > input {
+    display: inline-block;
+    width: calc(50% - 12px); /* Adjusting width to account for margin */
+}
+
+/* Add some space between the two inline inputs */
+.signup-form div > label + input {
+    margin-right: 20px;
+}
+
+/* Resetting margin for the second input */
+.signup-form div > input:last-child {
+    margin-right: 0;
+}
+
+/* Style adjustments for last div for better spacing */
+.signup-form div:last-child {
+    margin-bottom: 20px;
+}
+
+/* Submit button styling */
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.signup-form button:hover {
+    background-color: #0056b3;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark" style="background-color: rgb(205, 210, 232);">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="home.html">
+            <img class="logo" src="logo.png" alt="">
+            </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="home.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="home.html">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <form class="signup-form" id="signup-form">
+    <div>
+        <h2>Register to Pluginfy</h2>
+        <div>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" required/>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" required/>
+        </div>
+        <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" required/>
+        <label for="confirm-email">Confirm Email:</label>
+        <input type="text" id="confirm-email" required/>
+    </div>
+        <div>
+            
+        <label for="password">Password:</label>
+        <input type="text" id="signup-password" required/>
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="text" id="confirm-password" required/>
+    </div>
+        <div class="gender-select-box">
+            <label for="gender-select">Gender:</label>
+            <select id="gender-select">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" max="2024-02-14">
+        </div>
+
+            <button type="submit">Register</button>
+        
+    </div>
+  </form>
+  <script >
+    function isValidEmail(email) {
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return emailRegex.test(email);
+    }
+
+    function isValidPassword(password) {
+        var passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*]).*$/;
+        return passwordRegex.test(password);
+    }
+
+    const email_input = document.getElementById("email");
+    const confirm_email_input = document.getElementById("confirm-email");
+    const signup_password_input = document.getElementById("signup-password");
+    const confirm_password_input = document.getElementById("confirm-password");
+
+    const signup_form = document.getElementById("signup-form");
+
+
+        signup_form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const email = email_input.value.trim();
+            const c_email = confirm_email_input.value.trim();
+            const signup_password = signup_password_input.value.trim();
+            const confirm_signup_password = confirm_password_input.value.trim();
+
+            if (!isValidEmail(email)) {
+                alert("Invalid email format.");
+                return false;
+            }
+
+            if (email !== c_email) {
+                alert("Emails do not match.");
+                return false;
+            }
+
+            if (signup_password !== confirm_signup_password) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            if (!isValidPassword(signup_password)) {
+                alert("Invalid password. Password must be at least 8 characters long, contain at least one lowercase letter, one uppercase letter, one number, and one special character.");
+                return false;
+            }
+
+            window.location.href = "home.html";
+        });
+
+  </script>
+
+  </body>
+</html>

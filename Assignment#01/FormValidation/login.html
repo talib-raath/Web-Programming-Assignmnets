@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <meta charsetUTF-8>
+ <meta name="port" content="widthdevice-width,-scale=10">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css"/>
+ <title>Login</title>
+
+  <style>
+   
+      
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark" style="background-color: rgb(205, 210, 232);">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="home.html">
+          <img class="logo" src="logo.png" alt="">
+        </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="home.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div>
+
+    <div class="login-container" id="login-form">
+        <form class="login-form">
+            <h2 class="form-heading">Login to Pluginfy</h2>
+            <div class="input-group">
+                <label style="font-size: large;" for="username">Username</label>
+                <input type="text" id="username" placeholder="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label style="font-size: large;" for="password">Password</label>
+                <input type="password" id="password" placeholder="password" name="password" required>
+            </div>
+            <button type="submit" onclick="home.html">Login</button>
+        </form>
+        <script src="script.js"></script>
+    </div>
+  </div>
+  
+  </body>
+</html>
