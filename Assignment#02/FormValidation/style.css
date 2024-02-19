@@ -55,3 +55,88 @@
     border-radius:50px;
   }
   
+
+
+  .signup-form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+  }
+
+  .signup-form h2 {
+      text-align: center;
+      color: #333;
+  }
+
+  .signup-form div {
+      margin-bottom: 15px;
+  }
+
+  .signup-form label {
+      display: block;
+      margin-bottom: 5px;
+      color: #666;
+  }
+
+  /* Input and Select field styling */
+  .signup-form input[type="text"],
+  .signup-form input[type="password"],
+  .signup-form input[type="date"],
+  .signup-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      /* Space between each input/select */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      /* Includes padding and border in the element's total width and height */
+  }
+
+  /* Gender select box specific styling */
+  .gender-select-box {
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+  }
+
+  /* Adjustments for inputs to look better side by side */
+  .signup-form div>input {
+      display: inline-block;
+      width: calc(50% - 12px);
+      /* Adjusting width to account for margin */
+  }
+
+  /* Add some space between the two inline inputs */
+  .signup-form div>label+input {
+      margin-right: 20px;
+  }
+
+  /* Resetting margin for the second input */
+  .signup-form div>input:last-child {
+      margin-right: 0;
+  }
+
+  /* Style adjustments for last div for better spacing */
+  .signup-form div:last-child {
+      margin-bottom: 20px;
+  }
+
+  /* Submit button styling */
+  .signup-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+  }
+
+  .signup-form button:hover {
+      background-color: #0056b3;
+  }
